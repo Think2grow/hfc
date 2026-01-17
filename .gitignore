@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+.build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Astro cache
+.astro/
+
+# Mac system files
+*.DS_Store
+
+# SASS cache
+.sass-cache/
+
+# Coverage
+coverage/
+
+# Misc
+*.log
+*.tmp
+*.swp

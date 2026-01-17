@@ -1,0 +1,14 @@
+---
+export interface Props {
+  name: string;
+  location: string;
+  outcome: string;
+  children: any;
+}
+const { name, location, outcome, children } = Astro.props;
+---
+<div class="rounded-lg bg-white shadow p-6 flex flex-col gap-3">
+  <div class="text-lg font-semibold text-dark">{children}</div>
+  <div class="text-sm text-gray-600 mt-2">{outcome}</div>
+  <div class="mt-4 text-xs text-gray-500 font-medium">{name} &bull; {location}</div>
+</div>

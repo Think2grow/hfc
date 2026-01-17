@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Card from '../components/Card.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import FAQItem from '../components/FAQItem.astro';
+
+const faqs = [
+  { question: 'What is financial coaching?', answer: 'Financial coaching is a collaborative process to help you clarify your goals, build better money habits, and create a plan for your financial life. It is educational and not legal, tax, or investment advice.' },
+  { question: 'Who is financial coaching for?', answer: 'Coaching is for anyone who wants to gain clarity, confidence, and control over their finances—whether you’re just starting out, navigating a transition, or ready to level up.' },
+  { question: 'How is this different from financial advising?', answer: 'Coaching focuses on education, behavior, and accountability. We do not sell products or manage investments.' },
+  { question: 'Is this confidential?', answer: 'Absolutely. Your privacy and trust are paramount.' },
+  { question: 'How do sessions work?', answer: 'Sessions are held virtually or in-person, tailored to your needs. We’ll set goals, review progress, and tackle your biggest questions.' },
+  { question: 'What if I’m not sure coaching is right for me?', answer: 'Book a free discovery call—there’s no pressure or obligation.' },
+  { question: 'Do you offer one-time sessions?', answer: 'Yes! We offer both ongoing and single-session options.' },
+  { question: 'Can you help with budgeting?', answer: 'Yes, budgeting is a core part of our process. You’ll also get a free template.' },
+  { question: 'Is this only for people in debt?', answer: 'No. Coaching is for anyone who wants to improve their financial life, regardless of their starting point.' },
+  { question: 'How do I get started?', answer: 'Click “Book a Free Discovery Call” to schedule your first session.' },
+];
+
+const testimonials = [
+  { name: 'Sarah M.', location: 'Salt Lake City, UT', outcome: 'Paid off $12,000 in debt in 8 months', text: 'Matt helped me finally get a handle on my spending and feel confident about my future.' },
+  { name: 'James T.', location: 'Park City, UT', outcome: 'Saved for a first home', text: 'I never thought I could buy a house. With Matt’s help, I made a plan and stuck to it.' },
+  { name: 'Emily R.', location: 'Ogden, UT', outcome: 'Stopped living paycheck to paycheck', text: 'Coaching gave me the tools and support I needed to break old habits and build new ones.' },
+];
+
+const whoFor = [
+  { title: 'Young Professionals', desc: 'Build a strong financial foundation and avoid common money mistakes.' },
+  { title: 'Families & Couples', desc: 'Get on the same page, reduce stress, and plan for your future together.' },
+  { title: 'Career Changers', desc: 'Navigate transitions with clarity and confidence.' },
+];
+
+const benefits = [
+  'Personalized, judgment-free support',
+  'Clear action plan and accountability',
+  'Proven tools and templates',
+  'Confidential, 1:1 guidance',
+  'Flexible virtual or in-person sessions',
+  'Education, not sales',
+];
+
+const services = [
+  { title: '1:1 Coaching', desc: 'Personalized sessions to help you set goals, build habits, and create a plan.', icon: '👤' },
+  { title: 'Accountability Partner', desc: 'Ongoing support to keep you on track and motivated.', icon: '🤝' },
+  { title: 'Workshops & Groups', desc: 'Interactive sessions for teams, families, or organizations.', icon: '🧑‍🤝‍🧑' },
+];
+
+const trustBadges = [
+  'AFC® Candidate',
+  'Member: Association for Financial Counseling & Planning Education',
+  'Insured & Background Checked',
+];
+---
+<BaseLayout title="Financial Coaching for Real Life | Highline Financial Coaching" description="Get clarity, confidence, and a plan. Book a free discovery call with Matt Dehart in Salt Lake City, UT. Coaching for real people—no sales, just support.">
+  <section class="relative bg-gradient-to-b from-[#f5f8ff] to-white py-24 px-4 text-center flex flex-col items-center justify-center min-h-[60vh] border-b border-gray-100">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-dark mb-6 leading-tight tracking-tight drop-shadow-sm">
+        Gain Clarity.<br class="hidden md:inline" /> Build Confidence.<br class="hidden md:inline" /> Create Your Plan.
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto font-medium">
+        Financial coaching for real people—get expert support to take control of your money and your future. No sales, no shame, just real progress.
+      </p>
+      <Button
+        href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk"
+        target="_blank"
+        className="mt-8 mb-4 px-8 py-4 text-lg rounded-full shadow-xl bg-primary text-white font-extrabold tracking-wide hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-150"
+      >
+        Book a Free Discovery Call
+      </Button>
+      <div class="mt-6 text-base text-gray-500 font-medium">Serving Salt Lake City, UT &amp; beyond. 100% confidential. Educational only.</div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <SectionHeading title="Who This Is For" subtitle="Coaching for every stage of your financial journey." />
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      {whoFor.map(who => <Card><div class="text-xl font-semibold mb-2">{who.title}</div><div class="text-gray-700">{who.desc}</div></Card>)}
+    </div>
+  </section>
+
+  <section class="bg-light py-12 px-4">
+    <SectionHeading title="What You Get" subtitle="Support, tools, and a clear plan—tailored to you." />
+    <ul class="max-w-2xl mx-auto grid gap-3 list-disc list-inside text-lg text-dark">
+      {benefits.map(b => <li>{b}</li>)}
+    </ul>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <SectionHeading title="How It Works" subtitle="Simple, supportive, and focused on you." />
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <Card><div class="text-3xl mb-2">1</div><div class="font-semibold mb-1">Book a Free Call</div><div class="text-gray-700">Schedule a no-pressure discovery call to see if coaching is a fit.</div></Card>
+      <Card><div class="text-3xl mb-2">2</div><div class="font-semibold mb-1">Get a Custom Plan</div><div class="text-gray-700">We’ll clarify your goals and create a step-by-step plan together.</div></Card>
+      <Card><div class="text-3xl mb-2">3</div><div class="font-semibold mb-1">Make Real Progress</div><div class="text-gray-700">Get ongoing support, accountability, and tools to reach your goals.</div></Card>
+    </div>
+  </section>
+
+  <section class="bg-light py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <SectionHeading title="Services Overview" subtitle="Flexible options for every need." />
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        {services.map(s => <Card><div class="text-3xl mb-2">{s.icon}</div><div class="font-semibold mb-1">{s.title}</div><div class="text-gray-700">{s.desc}</div></Card>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <SectionHeading title="Testimonials" subtitle="Real results from real people." />
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      {testimonials.map(t => <TestimonialCard name={t.name} location={t.location} outcome={t.outcome}>{t.text}</TestimonialCard>)}
+    </div>
+  </section>
+
+  <section class="bg-light py-12 px-4">
+    <SectionHeading title="Credentials & Trust" subtitle="Professional, ethical, and here for you." />
+    <div class="flex flex-wrap gap-6 justify-center mt-8">
+      {trustBadges.map(b => <div class="bg-white rounded shadow px-6 py-3 text-dark font-semibold text-center">{b}</div>)}
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <SectionHeading title="Frequently Asked Questions" />
+    <div class="mt-8">
+      {faqs.slice(0,8).map(f => <FAQItem question={f.question} answer={f.answer} />)}
+    </div>
+  </section>
+
+  <section class="bg-primary py-16 px-4 text-center text-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to take the next step?</h2>
+    <p class="text-lg mb-6">Book your free discovery call or download a free budget template to get started.</p>
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <Button href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" className="bg-white text-primary hover:bg-light font-bold">Book a Free Discovery Call</Button>
+      <Button href="#budget-template" className="bg-accent text-dark hover:bg-light font-bold">Download Free Budget Template</Button>
+    </div>
+    <div class="mt-8 max-w-xl mx-auto bg-white/90 rounded shadow p-6 text-dark" id="budget-template">
+      <h3 class="text-xl font-bold mb-2">Download Your Free Budget Template</h3>
+      <form class="flex flex-col md:flex-row gap-3" name="budget-template" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="budget-template" />
+        <input type="email" name="email" required placeholder="Your email" class="flex-1 px-4 py-2 rounded border border-gray-300 focus:outline-primary" />
+        <button type="submit" class="px-5 py-2 rounded bg-primary text-white font-semibold hover:bg-primary/90 transition">Download</button>
+      </form>
+      <div class="text-xs text-gray-500 mt-2">We’ll send you a link to download the template. No spam, ever.</div>
+    </div>
+    <div class="mt-10">
+      <iframe src="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" title="Book a Free Call" class="w-full max-w-xl h-96 mx-auto rounded shadow border-2 border-primary"></iframe>
+    </div>
+  </section>
+</BaseLayout>

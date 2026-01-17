@@ -1,0 +1,15 @@
+---
+export interface Props {
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  children: any;
+  className?: string;
+  target?: string;
+}
+const { href, type = 'button', children, className = '', target } = Astro.props;
+---
+{href ? (
+  <a href={href} class={`inline-block px-5 py-2 rounded bg-primary text-white font-semibold shadow hover:bg-primary/90 transition ${className}`} target={target}><slot /></a>
+) : (
+  <button type={type} class={`px-5 py-2 rounded bg-primary text-white font-semibold shadow hover:bg-primary/90 transition ${className}`}><slot /></button>
+)}

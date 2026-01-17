@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+<BaseLayout title="About | Highline Financial Coaching" description="Meet Matt Dehart, your financial coach. Learn about our mission, values, and approach to helping you achieve financial clarity and confidence.">
+  <section class="bg-white py-16 px-4 text-center">
+    <SectionHeading title="Meet Your Coach" subtitle="A human approach to financial clarity." />
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-4xl mx-auto mt-10">
+      <div class="w-40 h-40 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center mx-auto md:mx-0 shadow-lg border-4 border-white">
+        <img src="/663ae8cd660aba6e08869057.jpeg" alt="Matt Dehart professional headshot" class="object-cover w-full h-full" />
+      </div>
+      <div class="text-left max-w-xl">
+        <h3 class="text-2xl font-bold mb-2">Matt Dehart</h3>
+        <div class="text-gray-700 mb-4">Founder & Financial Coach</div>
+        <p class="mb-4">I started Highline Financial Coaching to help people like you gain clarity, confidence, and control over your money—without judgment or sales pressure. My approach is rooted in education, empathy, and real-world experience. I believe everyone deserves a plan and a partner on their financial journey.</p>
+        <p class="mb-4">I’m an AFC® candidate, a member of the Association for Financial Counseling & Planning Education, and committed to ongoing learning and ethical practice.</p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light py-12 px-4">
+    <SectionHeading title="Why I Do This" />
+    <div class="max-w-3xl mx-auto text-lg text-dark text-center">
+      <p class="mb-4">I know what it’s like to feel overwhelmed by money decisions. I’ve seen how the right support can change lives. My mission is to make financial coaching accessible, practical, and genuinely helpful—so you can focus on what matters most.</p>
+    </div>
+  </section>
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <SectionHeading title="My Values & Approach" />
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="bg-white rounded shadow p-6 text-dark">
+        <div class="font-bold mb-2">Empathy</div>
+        <div>I meet you where you are, without judgment.</div>
+      </div>
+      <div class="bg-white rounded shadow p-6 text-dark">
+        <div class="font-bold mb-2">Education</div>
+        <div>My goal is to empower you with knowledge and tools.</div>
+      </div>
+      <div class="bg-white rounded shadow p-6 text-dark">
+        <div class="font-bold mb-2">Accountability</div>
+        <div>I’ll help you stay on track and celebrate your wins.</div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-primary py-16 px-4 text-center text-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s work together</h2>
+    <p class="text-lg mb-6">Book your free discovery call and start your journey to financial clarity.</p>
+    <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded bg-white text-primary font-bold shadow hover:bg-light transition">Book a Free Discovery Call</a>
+  </section>
+</BaseLayout>

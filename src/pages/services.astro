@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PricingCard from '../components/PricingCard.astro';
+
+const tiers = [
+  {
+    title: 'Starter',
+    description: 'A one-time session to get clarity, a custom plan, and actionable next steps. Perfect for a financial checkup or single goal.',
+    features: [
+      '60-minute 1:1 session',
+      'Personalized action plan',
+      'Email summary & resources',
+      'No ongoing commitment',
+    ],
+    cta: 'Book a Free Discovery Call',
+  },
+  {
+    title: 'Momentum',
+    description: 'Ongoing support and accountability to help you build habits and make real progress. Ideal for those ready to take action.',
+    features: [
+      'Monthly or biweekly sessions',
+      'Progress tracking & accountability',
+      'Unlimited email support',
+      'Flexible scheduling',
+    ],
+    cta: 'Book a Free Discovery Call',
+  },
+  {
+    title: 'Transformation',
+    description: 'Comprehensive coaching for major life changes or ambitious goals. Deep support, education, and partnership.',
+    features: [
+      'Custom session plan',
+      'In-depth goal setting',
+      'Ongoing accountability',
+      'Access to all tools & templates',
+    ],
+    cta: 'Book a Free Discovery Call',
+  },
+];
+---
+<BaseLayout title="Services | Highline Financial Coaching" description="Explore financial coaching services for every stage. 1:1 sessions, accountability, and transformation—no sales, just support.">
+  <section class="bg-white py-16 px-4 text-center">
+    <SectionHeading title="Services" subtitle="Flexible coaching options for every need." />
+    <div class="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
+      {tiers.map(tier => <PricingCard title={tier.title} description={tier.description} features={tier.features} cta={tier.cta} />)}
+    </div>
+    <div class="mt-8 text-gray-500 text-sm">All services are educational. Pricing: Starting at $200/mo. Book a free call to discuss your needs.</div>
+    <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" rel="noopener" class="inline-block mt-8 px-6 py-3 rounded bg-primary text-white font-bold shadow hover:bg-primary/90 transition">Book a Free Discovery Call</a>
+  </section>
+  <section class="bg-light py-12 px-4">
+    <SectionHeading title="What’s Included" subtitle="Every coaching relationship is unique, but you can expect:" />
+    <ul class="max-w-2xl mx-auto grid gap-3 list-disc list-inside text-lg text-dark">
+      <li>Confidential, judgment-free support</li>
+      <li>Personalized action plan</li>
+      <li>Accountability and encouragement</li>
+      <li>Education and proven tools</li>
+      <li>Flexible scheduling (virtual or in-person)</li>
+      <li>No product sales or investment management</li>
+    </ul>
+  </section>
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <SectionHeading title="Who It’s For" subtitle="Coaching is for anyone ready to take control of their finances." />
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="bg-white rounded shadow p-6 text-dark">Young professionals building a foundation</div>
+      <div class="bg-white rounded shadow p-6 text-dark">Families and couples planning together</div>
+      <div class="bg-white rounded shadow p-6 text-dark">Anyone navigating change or seeking clarity</div>
+    </div>
+  </section>
+  <section class="bg-primary px-4 text-center text-white flex flex-col items-center justify-center" style="min-height: 300px;">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>
+      <p class="text-lg mb-6">Book your free discovery call and let’s talk about your goals.</p>
+      <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded bg-white text-primary font-bold shadow hover:bg-light transition">Book a Free Discovery Call</a>
+    </div>
+  </section>
+</BaseLayout>

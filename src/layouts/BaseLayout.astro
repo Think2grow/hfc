@@ -1,0 +1,90 @@
+---
+import type { AstroProps } from 'astro';
+const {
+  title = 'Highline Financial Coaching',
+  description = 'Financial coaching for real life. Get clarity, confidence, and a plan with Matt Dehart in Salt Lake City, UT.',
+  canonical = 'https://www.highlinefinancialcoaching.com',
+  ogImage = '/og-default.jpg',
+  pageType = 'website',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={pageType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'Highline Financial Coaching',
+        image: ogImage,
+        url: canonical,
+        telephone: '+1-555-555-5555',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '123 Placeholder St',
+          addressLocality: 'Salt Lake City',
+          addressRegion: 'UT',
+          postalCode: '84101',
+          addressCountry: 'US',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 40.7608,
+          longitude: -111.8910,
+        },
+        openingHours: 'Mo-Fr 09:00-17:00',
+        sameAs: [],
+      })}
+    </script>
+  </head>
+  <body class="bg-background text-dark font-sans">
+    <header class="sticky top-0 z-50 bg-white/90 shadow-sm backdrop-blur">
+      <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <a href="/" class="flex items-center" aria-label="Highline Financial Coaching Home">
+          <img src="/tmpzy4wme4g.png" alt="Highline Financial Coaching logo" class="h-12 w-auto max-w-[180px] object-contain" style="background:transparent; box-shadow:none; border:none;" />
+        </a>
+        <ul class="flex gap-6 items-center text-base font-medium">
+          <li><a href="/" class="hover:text-primary">Home</a></li>
+          <li><a href="/services" class="hover:text-primary">Services</a></li>
+          <li><a href="/about" class="hover:text-primary">About</a></li>
+          <li><a href="/resources" class="hover:text-primary">Resources</a></li>
+          <li><a href="/contact" class="hover:text-primary">Contact</a></li>
+        </ul>
+        <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" class="ml-4 px-5 py-2 rounded bg-primary text-white font-semibold shadow hover:bg-primary/90 transition" target="_blank" rel="noopener">Book a Free Call</a>
+      </nav>
+    </header>
+    <main class="min-h-[70vh]">
+      <slot />
+    </main>
+    <footer class="bg-dark text-light py-8">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-lg font-bold">Highline Financial Coaching</div>
+        <div class="text-sm opacity-80">Salt Lake City, UT &bull; +1-555-555-5555 &bull; info@highlinefinancialcoaching.com</div>
+        <div class="flex gap-4">
+          <a href="/" class="hover:underline">Home</a>
+          <a href="/services" class="hover:underline">Services</a>
+          <a href="/about" class="hover:underline">About</a>
+          <a href="/resources" class="hover:underline">Resources</a>
+          <a href="/contact" class="hover:underline">Contact</a>
+        </div>
+      </div>
+      <div class="text-xs text-center mt-4 opacity-60">Coaching is educational and not legal, tax, or investment advice. &copy; {new Date().getFullYear()} Highline Financial Coaching.</div>
+    </footer>
+  </body>
+</html>

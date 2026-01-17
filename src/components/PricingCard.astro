@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  features: string[];
+  cta?: string;
+}
+const { title, description, features, cta } = Astro.props;
+---
+<div class="rounded-lg bg-white shadow p-8 flex flex-col gap-4 h-full min-h-[370px] max-w-md mx-auto justify-between">
+  <div>
+    <div class="text-2xl font-bold text-dark mb-2 text-center">{title}</div>
+    <div class="text-gray-600 text-center mb-4">{description}</div>
+    <ul class="my-3 space-y-2">
+      {features.map(f => <li class="flex items-start gap-2"><span class="text-primary">•</span> <span>{f}</span></li>)}
+    </ul>
+  </div>
+  {cta && <button class="mt-4 px-4 py-2 rounded bg-primary text-white font-semibold hover:bg-primary/90 transition w-full">{cta}</button>}
+</div>

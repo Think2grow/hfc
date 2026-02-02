@@ -1,9 +1,12 @@
-
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-layout: BaseLayout
+import BudgetTool from '../components/BudgetTool';
 ---
 
-<!-- Budget App SPA Entry Point -->
-<div id="budget-app-root"></div>
-<script type="module" src="/src/budget-app/main.ts"></script>
+<BaseLayout title="Budget Tool - HFC" description="Manage your budget with our simple and effective budget tracking tool.">
+  <div class="py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+      <BudgetTool client:load />
+    </div>
+  </div>
+</BaseLayout>

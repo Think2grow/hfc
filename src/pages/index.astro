@@ -14,7 +14,7 @@ const faqs = [
   { question: 'How do sessions work?', answer: 'Sessions are held virtually or in-person, tailored to your needs. We’ll set goals, review progress, and tackle your biggest questions.' },
   { question: 'What if I’m not sure coaching is right for me?', answer: 'Book a free discovery call—there’s no pressure or obligation.' },
   { question: 'Do you offer one-time sessions?', answer: 'Yes! We offer both ongoing and single-session options.' },
-  { question: 'Can you help with budgeting?', answer: 'Yes, budgeting is a core part of our process. You’ll also get a free template.' },
+  { question: 'Can you help with budgeting?', answer: 'Yes, budgeting is a core part of our coaching process. You\'ll gain tools and strategies tailored to your situation.' },
   { question: 'Is this only for people in debt?', answer: 'No. Coaching is for anyone who wants to improve their financial life, regardless of their starting point.' },
   { question: 'How do I get started?', answer: 'Click “Book a Free Discovery Call” to schedule your first session.' },
 ];
@@ -53,68 +53,130 @@ const trustBadges = [
 ];
 ---
 <BaseLayout title="Financial Coaching for Real Life | Highline Financial Coaching" description="Get clarity, confidence, and a plan. Book a free discovery call with Matt Dehart in Salt Lake City, UT. Coaching for real people—no sales, just support.">
-  <section class="relative bg-gradient-to-b from-[#f5f8ff] to-white py-24 px-4 text-center flex flex-col items-center justify-center min-h-[60vh] border-b border-gray-100">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-dark mb-6 leading-tight tracking-tight drop-shadow-sm">
-        Gain Clarity.<br class="hidden md:inline" /> Build Confidence.<br class="hidden md:inline" /> Create Your Plan.
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto font-medium">
-        Financial coaching for real people—get expert support to take control of your money and your future. No sales, no shame, just real progress.
-      </p>
-      <Button
-        href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk"
-        target="_blank"
-        className="mt-8 mb-4 px-8 py-4 text-lg rounded-full shadow-xl bg-primary text-white font-extrabold tracking-wide hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-150"
-      >
-        Book a Free Discovery Call
-      </Button>
-      <div class="mt-6 text-base text-gray-500 font-medium">Serving Salt Lake City, UT &amp; beyond. 100% confidential. Educational only.</div>
-    </div>
-  </section>
+  <section class="relative border-b border-gray-100 overflow-hidden min-h-screen lg:min-h-auto" style="background-color: #4d648e;">
+    <div class="grid grid-cols-1 lg:grid-cols-3 min-h-screen">
+      <!-- Solid Background - Left 1/3 -->
+      <div class="hidden lg:block" style="background-color: #4d648e;"></div>
 
-  <section class="max-w-5xl mx-auto py-12 px-4">
-    <SectionHeading title="Who This Is For" subtitle="Coaching for every stage of your financial journey." />
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      {whoFor.map(who => <Card><div class="text-xl font-semibold mb-2">{who.title}</div><div class="text-gray-700">{who.desc}</div></Card>)}
-    </div>
-  </section>
+      <!-- Image - Right 2/3 -->
+      <div class="hidden lg:flex lg:col-span-2 items-center justify-end">
+        <img 
+          src="/HeroImage.png" 
+          alt="Financial Coaching - Matt Dehart" 
+          class="w-full h-full object-cover"
+        />
+      </div>
 
-  <section class="bg-light py-12 px-4">
-    <SectionHeading title="What You Get" subtitle="Support, tools, and a clear plan—tailored to you." />
-    <ul class="max-w-2xl mx-auto grid gap-3 list-disc list-inside text-lg text-dark">
-      {benefits.map(b => <li>{b}</li>)}
-    </ul>
-  </section>
-
-  <section class="max-w-5xl mx-auto py-12 px-4">
-    <SectionHeading title="How It Works" subtitle="Simple, supportive, and focused on you." />
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <Card><div class="text-3xl mb-2">1</div><div class="font-semibold mb-1">Book a Free Call</div><div class="text-gray-700">Schedule a no-pressure discovery call to see if coaching is a fit.</div></Card>
-      <Card><div class="text-3xl mb-2">2</div><div class="font-semibold mb-1">Get a Custom Plan</div><div class="text-gray-700">We’ll clarify your goals and create a step-by-step plan together.</div></Card>
-      <Card><div class="text-3xl mb-2">3</div><div class="font-semibold mb-1">Make Real Progress</div><div class="text-gray-700">Get ongoing support, accountability, and tools to reach your goals.</div></Card>
-    </div>
-  </section>
-
-  <section class="bg-light py-12 px-4">
-    <div class="max-w-5xl mx-auto">
-      <SectionHeading title="Services Overview" subtitle="Flexible options for every need." />
-      <div class="grid md:grid-cols-3 gap-6 mt-8">
-        {services.map(s => <Card><div class="text-3xl mb-2">{s.icon}</div><div class="font-semibold mb-1">{s.title}</div><div class="text-gray-700">{s.desc}</div></Card>)}
+      <!-- Text Content - Overlay -->
+      <div class="absolute inset-0 flex items-center justify-start pointer-events-none">
+        <div class="w-full lg:w-2/3 h-full flex items-center justify-center px-6 md:px-12 lg:px-16 py-16 md:py-20 lg:py-0 pointer-events-auto">
+          <div class="max-w-2xl w-full text-center lg:text-left bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-10 lg:p-12">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900 space-y-2 md:space-y-3">
+              <span class="block">Gain <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #4d648e, #6b8cce, #93b5ed);">Clarity.</span></span>
+              <span class="block">Build <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #4d648e, #6b8cce, #93b5ed);">Confidence.</span></span>
+              <span class="block">Create <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #4d648e, #6b8cce, #93b5ed);">Your Plan.</span></span>
+            </h1>
+            <p class="text-base md:text-lg lg:text-xl mb-8 font-medium text-slate-700 leading-relaxed">
+              Financial coaching for real people—get expert support to take control of your money and your future. <span class="font-bold text-slate-900">No sales, no shame, just real progress.</span>
+            </p>
+            <Button
+              href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk"
+              target="_blank"
+              className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-full shadow-xl bg-blue-600 text-white font-extrabold tracking-wide hover:bg-blue-700 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-150 inline-block"
+            >
+              Book a Free Discovery Call
+            </Button>
+            <div class="mt-6 md:mt-8 text-sm md:text-base font-medium text-slate-600">Serving Salt Lake City, UT &amp; beyond. 100% confidential. Educational only.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="max-w-5xl mx-auto py-12 px-4">
-    <SectionHeading title="Testimonials" subtitle="Real results from real people." />
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      {testimonials.map(t => <TestimonialCard name={t.name} location={t.location} outcome={t.outcome}>{t.text}</TestimonialCard>)}
+  <section class="max-w-5xl mx-auto py-16 px-4">
+    <SectionHeading title="Who This Is For" subtitle="Coaching for every stage of your financial journey." />
+    <div class="grid md:grid-cols-3 gap-8 mt-12">
+      {whoFor.map((who, idx) => {
+        const icons = ['�', '🤝', '📈'];
+        const colors = ['from-blue-50', 'from-purple-50', 'from-teal-50'];
+        const accentColors = ['border-blue-200', 'border-purple-200', 'border-teal-200'];
+        return (
+          <div class={`bg-gradient-to-br ${colors[idx]} to-white rounded-xl border-2 ${accentColors[idx]} p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full`}>
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3">{who.title}</h3>
+              <p class="text-lg text-slate-700 leading-relaxed mb-6">{who.desc}</p>
+            </div>
+            <div class="pt-4 border-t-2 border-slate-200 mt-auto">
+              <p class="text-sm font-semibold text-slate-600 mb-3">What you'll get:</p>
+              <ul class="space-y-2">
+                <li class="flex gap-3 text-sm text-slate-600">
+                  <span class="text-blue-600 font-bold flex-shrink-0 w-4">•</span>
+                  <span>Personalized guidance for your situation</span>
+                </li>
+                <li class="flex gap-3 text-sm text-slate-600">
+                  <span class="text-blue-600 font-bold flex-shrink-0 w-4">•</span>
+                  <span>Practical action steps you can implement</span>
+                </li>
+                <li class="flex gap-3 text-sm text-slate-600">
+                  <span class="text-blue-600 font-bold flex-shrink-0 w-4">•</span>
+                  <span>Ongoing accountability & support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        );
+      })}
     </div>
   </section>
 
-  <section class="bg-light py-12 px-4">
-    <SectionHeading title="Credentials & Trust" subtitle="Professional, ethical, and here for you." />
-    <div class="flex flex-wrap gap-6 justify-center mt-8">
-      {trustBadges.map(b => <div class="bg-white rounded shadow px-6 py-3 text-dark font-semibold text-center">{b}</div>)}
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <SectionHeading title="What You Get" subtitle="Support, tools, and a clear plan—tailored to you." />
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mt-10">
+      {benefits.map((benefit) => (
+        <div class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#4d648e]">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-3 h-3 rounded-full bg-gradient-to-br from-[#4d648e] to-[#6b8cce] mt-2"></div>
+            <div class="flex-1">
+              <p class="text-lg text-gray-800 leading-relaxed">{benefit}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-br from-white to-slate-50 py-16 px-4">
+    <SectionHeading title="How It Works" subtitle="Simple, supportive, and focused on you." />
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mt-12">
+      <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#4d648e]">
+        <div class="absolute -top-6 left-8 w-12 h-12 rounded-full bg-gradient-to-br from-[#4d648e] to-[#6b8cce] flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+          1
+        </div>
+        <div class="mt-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900">Book a Free Call</h3>
+          <p class="text-gray-600 leading-relaxed">Schedule a no-pressure discovery call to see if coaching is a fit.</p>
+        </div>
+      </div>
+      
+      <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#6b8cce]">
+        <div class="absolute -top-6 left-8 w-12 h-12 rounded-full bg-gradient-to-br from-[#6b8cce] to-[#93b5ed] flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+          2
+        </div>
+        <div class="mt-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900">Get a Custom Plan</h3>
+          <p class="text-gray-600 leading-relaxed">We'll clarify your goals and create a step-by-step plan together.</p>
+        </div>
+      </div>
+      
+      <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#93b5ed]">
+        <div class="absolute -top-6 left-8 w-12 h-12 rounded-full bg-gradient-to-br from-[#93b5ed] to-[#4d648e] flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+          3
+        </div>
+        <div class="mt-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900">Make Real Progress</h3>
+          <p class="text-gray-600 leading-relaxed">Get ongoing support, accountability, and tools to reach your goals.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -125,24 +187,54 @@ const trustBadges = [
     </div>
   </section>
 
-  <section class="bg-primary py-16 px-4 text-center text-white">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to take the next step?</h2>
-    <p class="text-lg mb-6">Book your free discovery call or download a free budget template to get started.</p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-      <Button href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" className="bg-white text-primary hover:bg-light font-bold">Book a Free Discovery Call</Button>
-      <Button href="#budget-template" className="bg-accent text-dark hover:bg-light font-bold">Download Free Budget Template</Button>
-    </div>
-    <div class="mt-8 max-w-xl mx-auto bg-white/90 rounded shadow p-6 text-dark" id="budget-template">
-      <h3 class="text-xl font-bold mb-2">Download Your Free Budget Template</h3>
-      <form class="flex flex-col md:flex-row gap-3" name="budget-template" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="budget-template" />
-        <input type="email" name="email" required placeholder="Your email" class="flex-1 px-4 py-2 rounded border border-gray-300 focus:outline-primary" />
-        <button type="submit" class="px-5 py-2 rounded bg-primary text-white font-semibold hover:bg-primary/90 transition">Download</button>
-      </form>
-      <div class="text-xs text-gray-500 mt-2">We’ll send you a link to download the template. No spam, ever.</div>
-    </div>
-    <div class="mt-10">
-      <iframe src="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" title="Book a Free Call" class="w-full max-w-xl h-96 mx-auto rounded shadow border-2 border-primary"></iframe>
+  <section class="relative bg-gradient-to-br from-[#4d648e] via-[#5d7299] to-[#6b8cce] py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+    
+    <div class="relative max-w-4xl mx-auto text-center">
+      <div class="mb-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          Ready to Take the Next Step?
+        </h2>
+        <p class="text-xl text-white/90 max-w-2xl mx-auto">
+          Schedule your free discovery call today. No pressure, no obligation—just a conversation about your financial goals.
+        </p>
+      </div>
+
+      <div class="mt-12 bg-white rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm">
+        <div class="mb-8 text-center">
+          <h3 class="text-3xl font-bold text-gray-900 mb-3">Book Your Free Consultation</h3>
+          <p class="text-lg text-gray-600 mb-8">Choose a time that works best for you</p>
+          
+          <Button 
+            href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" 
+            target="_blank"
+            className="px-10 py-5 text-xl rounded-full shadow-xl bg-gradient-to-r from-[#4d648e] to-[#6b8cce] text-white font-extrabold tracking-wide hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-200 inline-block"
+          >
+            Schedule Your Free Call Now
+          </Button>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-6 text-white/90 text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>100% Free Consultation</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>No Obligation</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Confidential & Judgment-Free</span>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

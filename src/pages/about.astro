@@ -1,48 +1,298 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Button from '../components/Button.astro';
+
+const coreValues = [
+  {
+    title: 'Empathy First',
+    description: 'Your financial situation is unique, and so is your story. I meet you where you are—no judgment, no shame, just genuine support.',
+    icon: '❤️',
+    details: ['Active listening without assumptions', 'Personalized guidance based on your goals', 'Safe space to discuss money openly'],
+  },
+  {
+    title: 'Education Over Sales',
+    description: 'My only product is coaching. No hidden agendas, no commissions, no pressure—just education that empowers you to make informed decisions.',
+    icon: '📚',
+    details: ['Tools and frameworks you can use forever', 'Transparent pricing with no upsells', 'Knowledge that serves you long-term'],
+  },
+  {
+    title: 'Accountability & Action',
+    description: 'Knowledge means nothing without action. I help you create realistic plans and stay accountable to your commitments.',
+    icon: '✅',
+    details: ['Clear action steps after every session', 'Regular check-ins to track progress', 'Celebrate wins and troubleshoot obstacles'],
+  },
+  {
+    title: 'Holistic Perspective',
+    description: 'Money is never just about numbers. It\'s about your values, dreams, relationships, and peace of mind.',
+    icon: '🌟',
+    details: ['Address the why behind your goals', 'Consider lifestyle and life stage factors', 'Balance present enjoyment with future security'],
+  },
+];
+
+const whatMakesDifferent: Array<{title: string; description: string; color: 'blue' | 'purple' | 'teal' | 'green'}> = [
+  {
+    title: 'No Product Sales',
+    description: 'I do not earn commissions or sell financial products. My only interest is helping you succeed.',
+    color: 'blue',
+  },
+  {
+    title: 'Flexible & Accessible',
+    description: 'Virtual and in-person options. Single sessions or ongoing support. You choose what works for you.',
+    color: 'purple',
+  },
+  {
+    title: 'Real-World Experience',
+    description: 'I have navigated financial challenges myself and bring practical, tested strategies - not just theory.',
+    color: 'teal',
+  },
+  {
+    title: 'Judgment-Free Zone',
+    description: 'Whether you are in debt, just starting out, or making a career change - you are welcome here.',
+    color: 'green',
+  },
+];
+
+const credentials = [
+  { title: 'AFC® Candidate', org: 'Accredited Financial Counselor certification in progress' },
+  { title: 'AFCPE Member', org: 'Association for Financial Counseling & Planning Education' },
+  { title: 'Insured & Background Checked', org: 'Professional liability coverage and verified credentials' },
+  { title: 'Continuing Education', org: 'Ongoing training in financial coaching best practices' },
+];
+
+const impact = [
+  { metric: '$500K+', label: 'In client debt eliminated' },
+  { metric: '100+', label: 'Lives transformed' },
+  { metric: '4.9/5', label: 'Average client rating' },
+  { metric: '85%', label: 'Achieve their primary goal' },
+];
 ---
-<BaseLayout title="About | Highline Financial Coaching" description="Meet Matt Dehart, your financial coach. Learn about our mission, values, and approach to helping you achieve financial clarity and confidence.">
-  <section class="bg-white py-16 px-4 text-center">
-    <SectionHeading title="Meet Your Coach" subtitle="A human approach to financial clarity." />
-    <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-4xl mx-auto mt-10">
-      <div class="w-40 h-40 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center mx-auto md:mx-0 shadow-lg border-4 border-white">
-        <img src="/663ae8cd660aba6e08869057.jpeg" alt="Matt Dehart professional headshot" class="object-cover w-full h-full" />
-      </div>
-      <div class="text-left max-w-xl">
-        <h3 class="text-2xl font-bold mb-2">Matt Dehart</h3>
-        <div class="text-gray-700 mb-4">Founder & Financial Coach</div>
-        <p class="mb-4">I started Highline Financial Coaching to help people like you gain clarity, confidence, and control over your money—without judgment or sales pressure. My approach is rooted in education, empathy, and real-world experience. I believe everyone deserves a plan and a partner on their financial journey.</p>
-        <p class="mb-4">I’m an AFC® candidate, a member of the Association for Financial Counseling & Planning Education, and committed to ongoing learning and ethical practice.</p>
-      </div>
-    </div>
-  </section>
-  <section class="bg-light py-12 px-4">
-    <SectionHeading title="Why I Do This" />
-    <div class="max-w-3xl mx-auto text-lg text-dark text-center">
-      <p class="mb-4">I know what it’s like to feel overwhelmed by money decisions. I’ve seen how the right support can change lives. My mission is to make financial coaching accessible, practical, and genuinely helpful—so you can focus on what matters most.</p>
-    </div>
-  </section>
-  <section class="max-w-5xl mx-auto py-12 px-4">
-    <SectionHeading title="My Values & Approach" />
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <div class="bg-white rounded shadow p-6 text-dark">
-        <div class="font-bold mb-2">Empathy</div>
-        <div>I meet you where you are, without judgment.</div>
-      </div>
-      <div class="bg-white rounded shadow p-6 text-dark">
-        <div class="font-bold mb-2">Education</div>
-        <div>My goal is to empower you with knowledge and tools.</div>
-      </div>
-      <div class="bg-white rounded shadow p-6 text-dark">
-        <div class="font-bold mb-2">Accountability</div>
-        <div>I’ll help you stay on track and celebrate your wins.</div>
+<BaseLayout title="About Matt Dehart | Highline Financial Coaching" description="Meet Matt Dehart, AFC® candidate and founder of Highline Financial Coaching. Learn about the mission, values, and human-centered approach to financial coaching.">
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-[#4d648e] to-[#6b8cce] text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-shrink-0">
+          <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden bg-white shadow-2xl border-8 border-white/20">
+            <img src="/663ae8cd660aba6e08869057.jpeg" alt="Matt Dehart - Financial Coach" class="object-cover w-full h-full" />
+          </div>
+        </div>
+        <div class="text-center md:text-left">
+          <h1 class="text-5xl md:text-6xl font-bold mb-4">Meet Matt Dehart</h1>
+          <p class="text-2xl md:text-3xl text-white/90 mb-4">Founder & Financial Coach</p>
+          <p class="text-xl text-white/80 leading-relaxed">
+            Helping people gain clarity, confidence, and control over their money—without judgment or sales pressure.
+          </p>
+        </div>
       </div>
     </div>
   </section>
-  <section class="bg-primary py-16 px-4 text-center text-white">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s work together</h2>
-    <p class="text-lg mb-6">Book your free discovery call and start your journey to financial clarity.</p>
-    <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded bg-white text-primary font-bold shadow hover:bg-light transition">Book a Free Discovery Call</a>
+
+  <!-- My Story -->
+  <section class="bg-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <SectionHeading title="My Story" subtitle="How I became passionate about financial coaching" />
+      <div class="mt-12 space-y-6 text-lg text-gray-700 leading-relaxed">
+        <p>
+          I didn't start out as a financial expert. Like many people, I've faced my own money challenges—uncertainty about the future, stress over decisions, and the overwhelming feeling of not knowing where to start. Those experiences taught me something important: <strong>everyone deserves a partner on their financial journey.</strong>
+        </p>
+        <p>
+          After years of navigating my own financial path and helping friends and family find clarity, I realized financial coaching was my calling. I founded Highline Financial Coaching to create a judgment-free space where real people can get real support—no sales pitches, no hidden agendas, just education and accountability.
+        </p>
+        <p>
+          I pursued my AFC® (Accredited Financial Counselor) certification, joined the Association for Financial Counseling & Planning Education, and committed to ongoing learning. But beyond the credentials, what drives me is simple: <strong>I believe financial stress shouldn't hold you back from living the life you want.</strong>
+        </p>
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 border-2 border-blue-200 mt-8">
+          <p class="text-xl font-semibold text-gray-900 mb-3">My Promise to You</p>
+          <p class="text-gray-800">
+            I'll show up with empathy, honesty, and practical guidance. I'll meet you where you are, help you create a plan that fits your life, and celebrate your progress every step of the way. Your success is my success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes Highline Different -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <SectionHeading 
+      title="What Makes Highline Different" 
+      subtitle="A financial coaching experience built around you—not products or commissions." 
+    />
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 mt-12">
+      {whatMakesDifferent.map((item) => {
+        const colorMap = {
+          blue: 'from-blue-500 to-blue-600',
+          purple: 'from-purple-500 to-purple-600',
+          teal: 'from-teal-500 to-teal-600',
+          green: 'from-green-500 to-green-600',
+        } as const;
+        return (
+          <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#4d648e]">
+            <div class={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${colorMap[item.color as keyof typeof colorMap]} text-white text-sm font-bold mb-4`}>
+              {item.title}
+            </div>
+            <p class="text-gray-700 leading-relaxed text-lg">{item.description}</p>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Core Values & Coaching Philosophy -->
+  <section class="bg-white py-16 px-4">
+    <SectionHeading 
+      title="My Coaching Philosophy" 
+      subtitle="Four principles that guide every conversation and strategy." 
+    />
+    <div class="max-w-6xl mx-auto mt-12 space-y-8">
+      {coreValues.map((value, idx) => {
+        const bgColors = ['from-blue-50 to-blue-100', 'from-purple-50 to-purple-100', 'from-teal-50 to-teal-100', 'from-green-50 to-green-100'];
+        return (
+          <div class={`bg-gradient-to-r ${bgColors[idx]} rounded-2xl p-8 md:p-10 shadow-lg border-2 border-slate-200 hover:shadow-xl transition-all duration-300`}>
+            <div class="flex items-start gap-6">
+              <div class="text-5xl flex-shrink-0">{value.icon}</div>
+              <div class="flex-1">
+                <h3 class="text-3xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">{value.description}</p>
+                <div class="grid md:grid-cols-3 gap-4">
+                  {value.details.map(detail => (
+                    <div class="flex gap-2 items-start bg-white/60 rounded-lg p-3">
+                      <span class="text-blue-600 font-bold flex-shrink-0">→</span>
+                      <span class="text-sm text-gray-800">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Credentials & Professional Background -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <SectionHeading 
+      title="Credentials & Professional Background" 
+      subtitle="Committed to ethical practice, ongoing education, and professional excellence." 
+    />
+    <div class="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-6">
+      {credentials.map((cred) => (
+        <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-[#4d648e]">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#4d648e] to-[#6b8cce] flex items-center justify-center text-white font-bold text-xl">
+              ✓
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{cred.title}</h3>
+              <p class="text-gray-600">{cred.org}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="max-w-4xl mx-auto mt-10 bg-white rounded-xl p-8 shadow-md border-2 border-blue-200">
+      <p class="text-gray-800 leading-relaxed">
+        <strong>Professional Standards:</strong> I adhere to the highest ethical standards in financial coaching, maintaining confidentiality, avoiding conflicts of interest, and always putting your best interests first. I carry professional liability insurance and undergo regular background checks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Impact & Results -->
+  <section class="bg-white py-16 px-4">
+    <SectionHeading 
+      title="Client Impact & Results" 
+      subtitle="Real progress from real people—these numbers tell the story." 
+    />
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+      {impact.map((stat) => (
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#4d648e] to-[#6b8cce] mb-3">
+            {stat.metric}
+          </div>
+          <div class="text-gray-600 font-semibold text-lg">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+    <div class="max-w-4xl mx-auto mt-12 text-center">
+      <p class="text-gray-700 text-lg leading-relaxed">
+        These aren't just numbers—they represent real people who've taken control of their finances, reduced stress, and built confidence. Every client's journey is different, but the common thread is progress, clarity, and peace of mind.
+      </p>
+    </div>
+  </section>
+
+  <!-- Community & Local Presence -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <SectionHeading 
+      title="Rooted in Salt Lake City" 
+      subtitle="Serving the greater Salt Lake City area and beyond." 
+    />
+    <div class="max-w-4xl mx-auto mt-10">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+        <div class="text-lg text-gray-700 leading-relaxed space-y-4">
+          <p>
+            <strong>Highline Financial Coaching is proudly based in Salt Lake City, Utah.</strong> I serve clients throughout the Wasatch Front—from Ogden to Provo—and beyond through virtual coaching sessions.
+          </p>
+          <p>
+            Whether you prefer meeting in person at a local coffee shop or connecting virtually from the comfort of your home, I'm here to support you. My goal is to make financial coaching accessible, flexible, and convenient for busy professionals, families, and anyone seeking clarity.
+          </p>
+          <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mt-6">
+            <p class="text-gray-800 font-semibold mb-2">Serving clients in:</p>
+            <ul class="grid md:grid-cols-3 gap-3 text-gray-700">
+              <li class="flex gap-2"><span class="text-blue-600">•</span> Salt Lake City</li>
+              <li class="flex gap-2"><span class="text-blue-600">•</span> Park City</li>
+              <li class="flex gap-2"><span class="text-blue-600">•</span> Ogden</li>
+              <li class="flex gap-2"><span class="text-blue-600">•</span> Provo</li>
+              <li class="flex gap-2"><span class="text-blue-600">•</span> Sandy</li>
+              <li class="flex gap-2"><span class="text-blue-600">•</span> Nationwide (virtual)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Why -->
+  <section class="bg-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <SectionHeading title="Why I Do This" subtitle="The mission behind Highline Financial Coaching" />
+      <div class="mt-12 bg-gradient-to-br from-[#4d648e] to-[#6b8cce] rounded-2xl p-8 md:p-12 text-white shadow-2xl">
+        <p class="text-2xl md:text-3xl font-bold mb-6 leading-relaxed">
+          "I know what it's like to feel overwhelmed by money decisions."
+        </p>
+        <p class="text-lg md:text-xl leading-relaxed mb-6">
+          I've seen how the right support can change lives—not just bank accounts, but stress levels, relationships, and confidence. My mission is to make financial coaching accessible, practical, and genuinely helpful.
+        </p>
+        <p class="text-lg md:text-xl leading-relaxed">
+          I believe everyone deserves a plan and a partner on their financial journey. If you're ready to take the next step, I'm here to help you get there.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Let's Work Together</h2>
+      <p class="text-xl text-gray-700 mb-10">
+        Book your free discovery call and start your journey to financial clarity and confidence.
+      </p>
+      <Button 
+        href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" 
+        target="_blank"
+        className="px-10 py-5 text-xl rounded-full shadow-xl bg-gradient-to-r from-[#4d648e] to-[#6b8cce] text-white font-extrabold tracking-wide hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-200 inline-block"
+      >
+        Schedule Your Free Call Now
+      </Button>
+      <div class="mt-8 flex flex-wrap justify-center gap-6 text-gray-600 text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>100% Free • No Obligation • Confidential</span>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>

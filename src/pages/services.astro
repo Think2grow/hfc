@@ -1,77 +1,411 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import PricingCard from '../components/PricingCard.astro';
+import Button from '../components/Button.astro';
 
 const tiers = [
   {
-    title: 'Starter',
-    description: 'A one-time session to get clarity, a custom plan, and actionable next steps. Perfect for a financial checkup or single goal.',
+    title: 'Single Session',
+    subtitle: 'Financial Clarity in One Hour',
+    price: 'Custom Pricing',
+    description: 'Get focused guidance on a specific financial challenge or goal.',
     features: [
-      '60-minute 1:1 session',
-      'Personalized action plan',
-      'Email summary & resources',
-      'No ongoing commitment',
+      '60-minute 1:1 video or in-person session',
+      'Detailed action plan with next steps',
+      'Email summary with resources and templates',
+      'Follow-up email support (7 days)',
     ],
-    cta: 'Book a Free Discovery Call',
+    bestFor: 'Budget review, debt strategy, goal setting, or financial checkup',
+    deliverables: ['Custom action plan document', 'Recommended tools & templates', 'Follow-up email support'],
   },
   {
-    title: 'Momentum',
-    description: 'Ongoing support and accountability to help you build habits and make real progress. Ideal for those ready to take action.',
+    title: 'Momentum Package',
+    subtitle: 'Build Habits & Stay Accountable',
+    price: 'Custom Pricing',
+    description: 'Ongoing partnership to create lasting change through consistent support.',
     features: [
-      'Monthly or biweekly sessions',
-      'Progress tracking & accountability',
-      'Unlimited email support',
-      'Flexible scheduling',
+      'Monthly or biweekly sessions (your choice)',
+      'Between-session email & text check-ins',
+      'Progress tracking with custom dashboard',
+      'Access to full resource library',
+      'Flexible scheduling & session length',
     ],
-    cta: 'Book a Free Discovery Call',
+    bestFor: 'Building new money habits, ongoing accountability, major life transitions',
+    deliverables: ['Personalized financial roadmap', 'Budget templates & tracking tools', 'Quarterly progress reviews', 'Unlimited resource access'],
   },
   {
-    title: 'Transformation',
-    description: 'Comprehensive coaching for major life changes or ambitious goals. Deep support, education, and partnership.',
+    title: 'Transformation Program',
+    subtitle: 'Comprehensive Financial Overhaul',
+    price: 'Custom Pricing',
+    description: 'Deep partnership for ambitious goals or complex financial situations.',
     features: [
-      'Custom session plan',
-      'In-depth goal setting',
-      'Ongoing accountability',
-      'Access to all tools & templates',
+      'Weekly sessions for first 90 days',
+      'Custom curriculum based on your goals',
+      'Unlimited email & text support',
+      'Priority scheduling & extended sessions',
+      'Access to all premium tools & calculators',
+      'Partner/spouse sessions included',
     ],
-    cta: 'Book a Free Discovery Call',
+    bestFor: 'Debt elimination, home buying, career change, complete financial restructuring',
+    deliverables: ['Comprehensive financial plan', 'Custom tracking dashboard', 'Monthly strategy sessions', 'Lifetime resource access', 'Transition support plan'],
+  },
+];
+
+const specializedTracks = [
+  {
+    title: 'Debt Freedom Track',
+    description: 'Systematically eliminate debt using proven strategies',
+    includes: ['Debt inventory & prioritization', 'Payoff timeline & calculator', 'Negotiation strategies', 'Habit formation plan'],
+    icon: '💳',
+  },
+  {
+    title: 'Home Buying Track',
+    description: 'Navigate the home buying process with confidence',
+    includes: ['Savings goal & timeline', 'Credit optimization', 'Mortgage readiness assessment', 'Closing cost planning'],
+    icon: '🏡',
+  },
+  {
+    title: 'Career Transition Track',
+    description: 'Make career changes without financial stress',
+    includes: ['Income bridge planning', 'Benefits comparison', 'Emergency fund strategy', 'Negotiation preparation'],
+    icon: '💼',
+  },
+  {
+    title: 'Couples Finance Track',
+    description: 'Build shared financial goals and systems together',
+    includes: ['Joint goal setting', 'Money communication framework', 'Merged or separate approach', 'Accountability systems'],
+    icon: '💑',
+  },
+];
+
+const sessionStructure = [
+  {
+    phase: 'Discovery & Assessment',
+    duration: '15-20 minutes',
+    activities: ['Review your current financial situation', 'Clarify your goals and priorities', 'Identify obstacles and opportunities'],
+  },
+  {
+    phase: 'Strategy & Planning',
+    duration: '25-30 minutes',
+    activities: ['Develop actionable strategies', 'Create step-by-step plan', 'Explore tools and systems', 'Address specific questions'],
+  },
+  {
+    phase: 'Action & Accountability',
+    duration: '10-15 minutes',
+    activities: ['Set clear next steps', 'Identify accountability measures', 'Schedule follow-up support', 'Summarize key takeaways'],
   },
 ];
 ---
-<BaseLayout title="Services | Highline Financial Coaching" description="Explore financial coaching services for every stage. 1:1 sessions, accountability, and transformation—no sales, just support.">
-  <section class="bg-white py-16 px-4 text-center">
-    <SectionHeading title="Services" subtitle="Flexible coaching options for every need." />
-    <div class="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
-      {tiers.map(tier => <PricingCard title={tier.title} description={tier.description} features={tier.features} cta={tier.cta} />)}
-    </div>
-    <div class="mt-8 text-gray-500 text-sm">All services are educational. Pricing: Starting at $200/mo. Book a free call to discuss your needs.</div>
-    <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" rel="noopener" class="inline-block mt-8 px-6 py-3 rounded bg-primary text-white font-bold shadow hover:bg-primary/90 transition">Book a Free Discovery Call</a>
-  </section>
-  <section class="bg-light py-12 px-4">
-    <SectionHeading title="What’s Included" subtitle="Every coaching relationship is unique, but you can expect:" />
-    <ul class="max-w-2xl mx-auto grid gap-3 list-disc list-inside text-lg text-dark">
-      <li>Confidential, judgment-free support</li>
-      <li>Personalized action plan</li>
-      <li>Accountability and encouragement</li>
-      <li>Education and proven tools</li>
-      <li>Flexible scheduling (virtual or in-person)</li>
-      <li>No product sales or investment management</li>
-    </ul>
-  </section>
-  <section class="max-w-5xl mx-auto py-12 px-4">
-    <SectionHeading title="Who It’s For" subtitle="Coaching is for anyone ready to take control of their finances." />
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <div class="bg-white rounded shadow p-6 text-dark">Young professionals building a foundation</div>
-      <div class="bg-white rounded shadow p-6 text-dark">Families and couples planning together</div>
-      <div class="bg-white rounded shadow p-6 text-dark">Anyone navigating change or seeking clarity</div>
+<BaseLayout title="Coaching Services & Programs | Highline Financial Coaching" description="Explore flexible financial coaching options—from single sessions to comprehensive programs. Specialized tracks for debt, home buying, career transitions, and couples.">
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-[#4d648e] to-[#6b8cce] text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Coaching Services & Programs</h1>
+      <p class="text-xl md:text-2xl mb-8 text-white/90">Flexible options designed around your goals, timeline, and budget</p>
+      <p class="text-lg text-white/80">All services are educational and confidential. Pricing determined based on your specific needs.</p>
     </div>
   </section>
-  <section class="bg-primary px-4 text-center text-white flex flex-col items-center justify-center" style="min-height: 300px;">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>
-      <p class="text-lg mb-6">Book your free discovery call and let’s talk about your goals.</p>
-      <a href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded bg-white text-primary font-bold shadow hover:bg-light transition">Book a Free Discovery Call</a>
+
+  <!-- Service Tiers -->
+  <section class="bg-white py-16 px-4">
+    <SectionHeading title="Choose Your Coaching Path" subtitle="Whether you need a single session or ongoing partnership, there's an option for you." />
+    <div class="grid md:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
+      {tiers.map((tier, idx) => {
+        const gradients = ['from-blue-500 to-blue-600', 'from-purple-500 to-purple-600', 'from-teal-500 to-teal-600'];
+        const borderColors = ['border-blue-200', 'border-purple-200', 'border-teal-200'];
+        return (
+          <div class={`bg-white rounded-2xl border-2 ${borderColors[idx]} p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col`}>
+            <div class={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${gradients[idx]} text-white text-sm font-bold mb-4 self-start`}>
+              {tier.title}
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">{tier.subtitle}</h3>
+            <p class="text-3xl font-extrabold text-gray-900 mb-4">{tier.price}</p>
+            <p class="text-gray-600 mb-6 leading-relaxed">{tier.description}</p>
+            
+            <div class="mb-6">
+              <p class="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wide">What's Included</p>
+              <ul class="space-y-3">
+                {tier.features.map(feature => (
+                  <li class="flex gap-3 text-gray-700">
+                    <span class="text-blue-600 font-bold flex-shrink-0">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mb-6 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg p-4">
+              <p class="text-sm font-bold text-gray-900 mb-2">Best For</p>
+              <p class="text-sm text-gray-700">{tier.bestFor}</p>
+            </div>
+
+            <div class="mb-6 pt-4 border-t border-gray-200">
+              <p class="text-sm font-bold text-gray-900 mb-3">You'll Receive</p>
+              <ul class="space-y-2">
+                {tier.deliverables.map(item => (
+                  <li class="text-sm text-gray-600 flex gap-2">
+                    <span class="text-blue-500">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mt-auto">
+              <Button 
+                href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" 
+                target="_blank"
+                className={`w-full text-center px-6 py-3 rounded-lg bg-gradient-to-r ${gradients[idx]} text-white font-bold hover:opacity-90 transition-all duration-200`}
+              >
+                Book Free Discovery Call
+              </Button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Specialized Coaching Tracks -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <SectionHeading 
+      title="Specialized Coaching Tracks" 
+      subtitle="Custom curriculum designed for specific financial goals and situations." 
+    />
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 mt-12">
+      {specializedTracks.map((track) => (
+        <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#4d648e]">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="text-4xl">{track.icon}</span>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">{track.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{track.description}</p>
+            </div>
+          </div>
+          <div class="mt-6 pl-16">
+            <p class="text-sm font-bold text-gray-900 mb-3">Track Includes:</p>
+            <ul class="space-y-2">
+              {track.includes.map(item => (
+                <li class="text-sm text-gray-700 flex gap-2">
+                  <span class="text-blue-600 font-bold">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="max-w-4xl mx-auto mt-10 text-center">
+      <p class="text-gray-700 text-lg">
+        <strong>Note:</strong> Specialized tracks can be combined with any service tier. Discuss your specific needs during your free discovery call.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Happens in a Session -->
+  <section class="bg-white py-16 px-4">
+    <SectionHeading 
+      title="What Happens in a Coaching Session?" 
+      subtitle="A structured yet flexible approach designed to maximize your progress." 
+    />
+    <div class="max-w-5xl mx-auto mt-12 space-y-6">
+      {sessionStructure.map((phase, idx) => (
+        <div class="bg-gradient-to-r from-white to-slate-50 rounded-xl border-2 border-slate-200 p-8 shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#4d648e] to-[#6b8cce] flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+              {idx + 1}
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="text-2xl font-bold text-gray-900">{phase.phase}</h3>
+                <span class="text-sm font-semibold text-gray-500 bg-slate-100 px-3 py-1 rounded-full">{phase.duration}</span>
+              </div>
+              <ul class="space-y-2">
+                {phase.activities.map(activity => (
+                  <li class="flex gap-3 text-gray-700">
+                    <span class="text-blue-600 font-bold flex-shrink-0">→</span>
+                    <span>{activity}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="max-w-4xl mx-auto mt-10 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 border-2 border-blue-200">
+      <p class="text-gray-800 text-lg leading-relaxed">
+        <strong>Every session is tailored to you.</strong> This structure serves as a guide, but we'll adjust based on your needs, questions, and pace. Some sessions focus entirely on strategy, others on troubleshooting challenges or celebrating wins.
+      </p>
+    </div>
+  </section>
+
+  <!-- Comparison Matrix -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <SectionHeading 
+      title="Service Comparison" 
+      subtitle="See what's included in each coaching option at a glance." 
+    />
+    <div class="max-w-6xl mx-auto mt-12 overflow-x-auto">
+      <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+        <thead>
+          <tr class="bg-gradient-to-r from-[#4d648e] to-[#6b8cce] text-white">
+            <th class="px-6 py-4 text-left font-bold">Feature</th>
+            <th class="px-6 py-4 text-center font-bold">Single Session</th>
+            <th class="px-6 py-4 text-center font-bold">Momentum</th>
+            <th class="px-6 py-4 text-center font-bold">Transformation</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">1:1 Sessions</td>
+            <td class="px-6 py-4 text-center text-gray-700">1 session</td>
+            <td class="px-6 py-4 text-center text-gray-700">Monthly/Biweekly</td>
+            <td class="px-6 py-4 text-center text-gray-700">Weekly (90 days)</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Custom Action Plan</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Email Support</td>
+            <td class="px-6 py-4 text-center text-gray-700">7 days</td>
+            <td class="px-6 py-4 text-center text-gray-700">Between sessions</td>
+            <td class="px-6 py-4 text-center text-gray-700">Unlimited</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Resource Library Access</td>
+            <td class="px-6 py-4 text-center text-gray-400">—</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓ Premium</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Progress Tracking Dashboard</td>
+            <td class="px-6 py-4 text-center text-gray-400">—</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓ Custom</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Partner/Spouse Sessions</td>
+            <td class="px-6 py-4 text-center text-gray-400">Add-on</td>
+            <td class="px-6 py-4 text-center text-gray-400">Add-on</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓ Included</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Text Check-ins</td>
+            <td class="px-6 py-4 text-center text-gray-400">—</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Priority Scheduling</td>
+            <td class="px-6 py-4 text-center text-gray-400">—</td>
+            <td class="px-6 py-4 text-center text-gray-400">—</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">Specialized Track Support</td>
+            <td class="px-6 py-4 text-center text-gray-400">Limited</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓</td>
+            <td class="px-6 py-4 text-center text-blue-600 font-bold">✓ Full</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-white py-16 px-4">
+    <SectionHeading title="Common Questions" subtitle="Everything you need to know about working together." />
+    <div class="max-w-4xl mx-auto mt-12 space-y-4">
+      <details class="bg-gradient-to-r from-white to-slate-50 rounded-lg border-2 border-slate-200 p-6 hover:shadow-md transition-all group">
+        <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          <span>How is pricing determined?</span>
+          <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Pricing is customized based on your specific needs, session frequency, and program length. During your free discovery call, we'll discuss your goals and provide transparent pricing options that fit your budget. All services are educational only—no product sales or commissions.
+        </p>
+      </details>
+
+      <details class="bg-gradient-to-r from-white to-slate-50 rounded-lg border-2 border-slate-200 p-6 hover:shadow-md transition-all group">
+        <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          <span>Can I switch between service tiers?</span>
+          <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Absolutely. You can start with a single session and upgrade to ongoing coaching anytime. Or begin with Momentum and scale up to Transformation if your needs change. Flexibility is built into every service.
+        </p>
+      </details>
+
+      <details class="bg-gradient-to-r from-white to-slate-50 rounded-lg border-2 border-slate-200 p-6 hover:shadow-md transition-all group">
+        <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          <span>Are sessions virtual or in-person?</span>
+          <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Both! Virtual sessions (via Zoom or phone) are available nationwide. In-person sessions are available in the Salt Lake City, UT area. Choose what works best for you.
+        </p>
+      </details>
+
+      <details class="bg-gradient-to-r from-white to-slate-50 rounded-lg border-2 border-slate-200 p-6 hover:shadow-md transition-all group">
+        <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          <span>What if I need to cancel or reschedule?</span>
+          <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Life happens. Just provide 24 hours notice and we'll reschedule with no penalty. Ongoing clients have flexible scheduling built into their programs.
+        </p>
+      </details>
+
+      <details class="bg-gradient-to-r from-white to-slate-50 rounded-lg border-2 border-slate-200 p-6 hover:shadow-md transition-all group">
+        <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          <span>Do you work with couples?</span>
+          <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Yes! Couples coaching is included in the Transformation program and available as an add-on for other tiers. Partner sessions help align your financial goals, improve communication, and build systems that work for both of you.
+        </p>
+      </details>
+
+      <details class="bg-gradient-to-r from-white to-slate-50 rounded-lg border-2 border-slate-200 p-6 hover:shadow-md transition-all group">
+        <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          <span>What tools and resources will I receive?</span>
+          <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Depending on your service tier, you'll receive custom budget templates, goal-setting worksheets, debt payoff calculators, tracking dashboards, educational resources, and more. All tools are practical and designed for immediate use.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-[#4d648e] via-[#5d7299] to-[#6b8cce] py-20 px-4 text-center text-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+      <p class="text-xl mb-8 text-white/90">
+        Book your free discovery call to discuss your goals, explore your options, and find the perfect coaching fit.
+      </p>
+      <Button 
+        href="https://go.highlinefinancialcoaching.com/widget/booking/IzVvZ4MhTaD8eZiRlBrk" 
+        target="_blank"
+        className="px-10 py-5 text-xl rounded-full shadow-xl bg-white text-[#4d648e] font-extrabold tracking-wide hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-2 transition-all duration-200 inline-block"
+      >
+        Schedule Your Free Call Now
+      </Button>
+      <div class="mt-8 flex flex-wrap justify-center gap-6 text-white/90 text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>100% Free • No Obligation • Confidential</span>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
